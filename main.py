@@ -5,3 +5,8 @@ print(test)
 test3=test+test2
 print(test3)
 print("Test")
+
+from radiosender import Radiosender
+
+radioBob=Radiosender('http://streams.radio.de/bob-live/mp3-192/mediaplayer','RadioBob')
+radioBob.play()
