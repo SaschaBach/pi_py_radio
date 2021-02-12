@@ -1,16 +1,25 @@
-import vlc, time 
+import time
+import vlc
+
+from myLogger import MyLogger
 
 class Radiosender(object):
-    
-    def __init__(self, url, name) :
+       
+    def __init__(self, url, name):
         self.url = url
         self.name = name
-        self.instance = vlc.Instance('--input-repeat=-1','--fullscreen')
+        self.myLogger = MyLogger(self.__class__.__name__ + '[' + name + ']')
 
     def play(self):
-        media = self.instance.media_new(self.url)
-        media.get_mrl()
+        self.instance = vlc.Instance('--input-repeat=-1', '--fullscreen')
+        self.player = self.instance.media_player_new()
+        self.media = self.instance.media_new(self.url)
+        self.media.get_mrl()
+        self.player.set_media(self.media)
         
-        player = self.instance.media_player_new()
-        player.set_media(media)
-        player.play()
+        self.player.play()
+        self.myLogger.info('play ' + self.url) 
+                
+    def stop(self):
+        self.player.stop()
+        self.myLogger.info('stop ' + self.url) 

@@ -7,6 +7,9 @@ print(test3)
 print("Test")
 
 from radiosender import Radiosender
+import time
 
-radioBob=Radiosender('http://streams.radio.de/bob-live/mp3-192/mediaplayer','RadioBob')
+radioBob=Radiosender('http://streams.radiobob.de/bob-live/mp3-192/mediaplayer','RadioBob')
 radioBob.play()
+time.sleep(20)
+radioBob.stop()
