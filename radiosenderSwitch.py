@@ -14,12 +14,13 @@ class RadiosenderSwitch(object):
         self.hr3:Radiosender('http://metafiles.gl-systemhaus.de/hr/hr3_2.m3u',self.hr3)}
 
     def get_radiosender(self, name):
-        self.myLogger.info('get_radiosender(' + name + ')')
+        self.myLogger.info("get_radiosender(%s)" % name)    
+
 
         try:
             radiosender = self.radiosenderDict[name]
         except KeyError:
-            self.myLogger.error("Radiosender " + name + " unbekannt.")
+            self.myLogger.error("Radiosender %s unbekannt." % name)
             return 
 
         return radiosender 

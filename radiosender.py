@@ -26,9 +26,10 @@ class Radiosender(object):
     def play(self):
         self.list_player.play()
         # self.player.play()
-        self.myLogger.info('play ' + self.url) 
+        self.myLogger.info("play %s" % self.url)    
+
                 
     def stop(self):
         self.list_player.stop()
         # self.player.stop()
-        self.myLogger.info('stop ' + self.url) 
+        self.myLogger.info("stop %s" % self.url)    

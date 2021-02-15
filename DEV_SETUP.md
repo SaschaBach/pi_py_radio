@@ -19,6 +19,7 @@ apt-get install git
 # Fuer beide
 # Um VLC zu starten muss erst die python lib für VLC installiert werden
 pip install python-vlc
+pip3 install coloredlogs
 
 # Git Commands
 git init

@@ -29,17 +29,17 @@ class RadiosenderProcess(object):
             except: # catch *all* exceptions
                 # Hier muss der Status auf Default gesetzt werden und dann muss es weiter gehen. 
                 e = sys.exc_info()[0]
-                self.myLogger.error(e.message)
+                self.myLogger.error("Fehler im Prozess: %s" % e )    
 
             radiosender2 = self.radiosenderSwitch.get_radiosender(self.radiosenderSwitch.radioBob) 
             radiosender2.play()
-            time.sleep(20)
+            time.sleep(10)
             radiosender2.stop()
-            time.sleep(20)
+            time.sleep(10)
 
             radiosender3 = self.radiosenderSwitch.get_radiosender(self.radiosenderSwitch.hr3) 
             radiosender3.play()
-            time.sleep(20)
+            time.sleep(10)
             radiosender3.stop()
-            time.sleep(20)
+            time.sleep(10)
             
