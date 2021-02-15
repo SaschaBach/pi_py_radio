@@ -14,7 +14,7 @@ class RadiosenderProcess(object):
     def process(self):
         count = 0
         # Das muss in einer Endlosschleife laufen
-        while count < 2:
+        while count < 1:
             count += 1
 
             time.sleep(5)
