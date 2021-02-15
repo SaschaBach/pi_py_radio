@@ -12,12 +12,22 @@ class Radiosender(object):
 
     def play(self):
         self.instance = vlc.Instance('--input-repeat=-1', '--fullscreen')
+        #self.player = self.instance.media_player_new()
+        #self.media = self.instance.media_new(self.url)
+        #self.media.get_mrl()
+        #self.player.set_media(self.media)
+        
         self.player = self.instance.media_player_new()
         self.media = self.instance.media_new(self.url)
+        self.media_list = self.instance.media_list_new([self.url])
+
         self.media.get_mrl()
         self.player.set_media(self.media)
-        
-        self.player.play()
+        self.list_player = self.instance.media_list_player_new()
+        self.list_player.set_media_list(self.media_list)
+
+        self.list_player.play()
+        #self.player.play()
         self.myLogger.info('play ' + self.url) 
                 
     def stop(self):

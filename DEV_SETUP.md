@@ -1,6 +1,8 @@
 # Fuer den Mac
 # Homebrew 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+# python 
+brew install python
 # VLC
 brew install vlc
 # GIT
