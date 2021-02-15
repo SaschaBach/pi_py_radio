@@ -9,17 +9,26 @@ brew install vlc
 brew install git
 # Um das Entwicklungsverzeichnis auf dem Pi innerhalb der lokalen Maschine zu mounten
 sshfs pi@192.168.2.114:/home/pi/Desktop/pi_py_radio ~/Desktop/pi_py_radio_pi
+# Redis
+brew install redis
+brew services start redis
+brew services stop redis
+redis-cli ping
+redis-cli monitor
 
 # Fuer den Pi
 # VLC
 apt-get install vlc
 # GIT
 apt-get install git
+# Redis
+tbd
 
 # Fuer beide
 # Um VLC zu starten muss erst die python lib für VLC installiert werden
-pip install python-vlc
+pip3 install python-vlc
 pip3 install coloredlogs
+pip3 install redis
 
 # Git Commands
 git init
