@@ -10,13 +10,19 @@ class RadiosenderSwitch(object):
         self.myLogger = MyLogger(self.__class__.__name__)
         self.myLogger.info('Init RadioSwitch')
 
-        self.radiosenderDict = {self.radioBob:Radiosender('http://streams.radiobob.de/bob-live/mp3-192/mediaplayer',self.radioBob), 
-        self.hr3:Radiosender('http://hr-hr3-live.cast.addradio.de/hr/hr3/live/mp3/128/stream.mp3',self.hr3)}
+        self.radiosenderDict = {self.radioBob:Radiosender('http://streams.radiobob.de/100/mp3-192/streams.radiobob.de/play.m3u',self.radioBob), 
+        self.hr3:Radiosender('http://metafiles.gl-systemhaus.de/hr/hr3_2.m3u',self.hr3)}
 
     def get_radiosender(self, name):
         self.myLogger.info('get_radiosender(' + name + ')')
 
-        return self.radiosenderDict[name]
+        try:
+            radiosender = self.radiosenderDict[name]
+        except KeyError:
+            self.myLogger.error("Radiosender " + name + " unbekannt.")
+            return 
+
+        return radiosender 
 
      
 

@@ -20,7 +20,6 @@ apt-get install git
 # Um VLC zu starten muss erst die python lib für VLC installiert werden
 pip install python-vlc
 
-
 # Git Commands
 git init
 git config --global user.name "SaschaBach"
