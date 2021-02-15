@@ -31,3 +31,4 @@ git checkout main
 git add --all
 git commit -m "bissl huebsch gemacht"
 git push -u origin main
+git pull
