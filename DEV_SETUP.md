@@ -29,6 +29,7 @@ tbd
 pip3 install python-vlc
 pip3 install coloredlogs
 pip3 install redis
+pip3 install termcolor
 
 # Git Commands
 git init

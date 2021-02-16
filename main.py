@@ -3,11 +3,26 @@ import sys
 import redis
 import time
 import argparse
+from termcolor import colored
 
 from dryModeProcess import DryModeProcess
 from radiosenderProcess import RadiosenderProcess
 from radiosenderSwitch import RadiosenderSwitch
 from myLogger import MyLogger
+
+def print_startscreen():
+    print("************************************")       
+    print("______ _  ______          _ _")       
+    print("| ___ (_) | ___ \        | (_)")      
+    print("| |_/ /_  | |_/ /__ _  __| |_  ___")  
+    print("|  __/| | |    // _` |/ _` | |/ _ \ ")
+    print("| |   | | | |\ \ (_| | (_| | | (_) |")
+    print("\_|   |_| \_| \_\__,_|\__,_|_|\___/ ")
+    print("************************************")
+    print(colored("Press XYZ to skip","red"))
+    print("************************************")
+
+print_startscreen()
 
 myLogger = MyLogger('main')
 myLogger.info('Starte Anwendung')
@@ -51,4 +66,9 @@ except:
 # 4. schönes startbild
 # 5. Stoppe Skript bei Tastendruck
 # 6. Loglevel vom Start verarbeiten
+# 7. In File loggen. 
+
+
+                                    
+                                    
 
