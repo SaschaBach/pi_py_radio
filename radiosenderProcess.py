@@ -15,9 +15,11 @@ class RadiosenderProcess(object):
     def process(self):
         count = 0
 
-        currentRadiosenderName = RadiosenderSwitch.radioBob
-        self.radiosender = self.radiosenderSwitch.get_radiosender(currentRadiosenderName) 
-        self.radiosender.play()
+        currentRadiosenderName = RadiosenderSwitch.radio_aus
+        # nur zum initialisieren. Todo: huebsch machen
+        self.radiosender = self.radiosenderSwitch.get_radiosender(RadiosenderSwitch.radioBob) 
+
+        redisServer = redis.Redis(host='localhost', port=6379, db=0)
 
         # Das muss in einer Endlosschleife laufen
         while count < 5:
@@ -26,14 +28,13 @@ class RadiosenderProcess(object):
             time.sleep(10)
 
             try:
-                redisServer = redis.Redis(host='localhost', port=6379, db=0)
                 radiosenderName = redisServer.get(RadiosenderSwitch.radiosender)
                 radiosenderNameDecoded = radiosenderName.decode('utf-8')
+                
                 self.myLogger.debug('Radiosender aus Redis %s' % radiosenderNameDecoded)
-
                 self.myLogger.debug('currentRadiosenderName %s' % currentRadiosenderName)
 
-                if currentRadiosenderName == radiosenderNameDecoded:
+                if currentRadiosenderName == radiosenderNameDecoded or radiosenderNameDecoded == RadiosenderSwitch.radio_aus:
                     continue
 
                 self.myLogger.info("Aktueller Radiosender gewechselt zu %s" % radiosenderNameDecoded)

@@ -3,6 +3,7 @@ from radiosender import Radiosender
 
 class RadiosenderSwitch(object):
 
+    radio_aus = 'radio_aus'
     radiosender = 'radiosender'
     hr3 = 'HR3'
     radioBob = 'RadioBob'
