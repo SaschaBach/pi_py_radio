@@ -1,0 +1,161 @@
+2021-02-16 13:40:47,065,065 [MainThread] RadioProcess[8732] INFO Init RadioProcess
+2021-02-16 13:40:47,066,066 [MainThread] RadioSwitch[8732] INFO Init RadioSwitch
+2021-02-16 13:40:47,067,067 [MainThread] Radiostation[RadioBob][8732] INFO Init Radiostation
+2021-02-16 13:40:47,128,128 [MainThread] Radiostation[HR3][8732] INFO Init Radiostation
+2021-02-16 13:40:47,132,132 [MainThread] RadioSwitch[8732] INFO get_radiostation(RadioBob)
+2021-02-16 13:40:47,133,133 [MainThread] main[8732] INFO DryMode Flag is activ
+2021-02-16 13:40:47,134,134 [MainThread] DryModeProcess[8732] INFO Init DryModeProcess
+2021-02-16 13:40:52,134,134 [RadioThread] RadioProcess[8732] DEBUG Selected Radiostation: radio_off.
+2021-02-16 13:40:52,135,135 [RadioThread] RadioProcess[8732] DEBUG Current Radiostation: radio_off.
+2021-02-16 13:40:57,138,138 [DryModeThread] DryModeProcess[8732] INFO Starte RadioBob
+2021-02-16 13:40:57,140,140 [RadioThread] RadioProcess[8732] DEBUG Selected Radiostation: radio_off.
+2021-02-16 13:40:57,141,141 [RadioThread] RadioProcess[8732] DEBUG Current Radiostation: radio_off.
+2021-02-16 13:41:02,147,147 [RadioThread] RadioProcess[8732] DEBUG Selected Radiostation: RadioBob.
+2021-02-16 13:41:02,147,147 [RadioThread] RadioProcess[8732] DEBUG Current Radiostation: radio_off.
+2021-02-16 13:41:02,148,148 [RadioThread] RadioProcess[8732] INFO Change Radiostation to RadioBob.
+2021-02-16 13:41:02,148,148 [RadioThread] Radiostation[RadioBob][8732] INFO stop http://streams.radiobob.de/100/mp3-192/streams.radiobob.de/play.m3u
+2021-02-16 13:41:02,149,149 [RadioThread] RadioProcess[8732] DEBUG Stop current radiostation RadioBob .
+2021-02-16 13:41:02,149,149 [RadioThread] RadioSwitch[8732] INFO get_radiostation(RadioBob)
+2021-02-16 13:41:02,149,149 [RadioThread] Radiostation[RadioBob][8732] INFO play http://streams.radiobob.de/100/mp3-192/streams.radiobob.de/play.m3u
+2021-02-16 13:41:07,141,141 [DryModeThread] DryModeProcess[8732] INFO Starte hr3
+2021-02-16 13:41:07,155,155 [RadioThread] RadioProcess[8732] DEBUG Selected Radiostation: HR3.
+2021-02-16 13:41:07,156,156 [RadioThread] RadioProcess[8732] DEBUG Current Radiostation: RadioBob.
+2021-02-16 13:41:07,156,156 [RadioThread] RadioProcess[8732] INFO Change Radiostation to HR3.
+2021-02-16 13:41:07,156,156 [RadioThread] Radiostation[RadioBob][8732] INFO stop http://streams.radiobob.de/100/mp3-192/streams.radiobob.de/play.m3u
+2021-02-16 13:41:07,156,156 [RadioThread] RadioProcess[8732] DEBUG Stop current radiostation RadioBob .
+2021-02-16 13:41:07,157,157 [RadioThread] RadioSwitch[8732] INFO get_radiostation(HR3)
+2021-02-16 13:41:07,157,157 [RadioThread] Radiostation[HR3][8732] INFO play http://metafiles.gl-systemhaus.de/hr/hr3_2.m3u
+2021-02-16 13:41:12,160,160 [RadioThread] RadioProcess[8732] DEBUG Selected Radiostation: HR3.
+2021-02-16 13:41:12,160,160 [RadioThread] RadioProcess[8732] DEBUG Current Radiostation: HR3.
+2021-02-16 13:41:17,161,161 [RadioThread] RadioProcess[8732] DEBUG Selected Radiostation: HR3.
+2021-02-16 13:41:17,162,162 [RadioThread] RadioProcess[8732] DEBUG Current Radiostation: HR3.
+2021-02-16 13:41:22,165,165 [RadioThread] RadioProcess[8732] DEBUG Selected Radiostation: HR3.
+2021-02-16 13:41:22,165,165 [RadioThread] RadioProcess[8732] DEBUG Current Radiostation: HR3.
+2021-02-16 13:41:27,145,145 [DryModeThread] DryModeProcess[8732] INFO Starte RadioBob
+2021-02-16 13:41:27,170,170 [RadioThread] RadioProcess[8732] DEBUG Selected Radiostation: RadioBob.
+2021-02-16 13:41:27,170,170 [RadioThread] RadioProcess[8732] DEBUG Current Radiostation: HR3.
+2021-02-16 13:41:27,171,171 [RadioThread] RadioProcess[8732] INFO Change Radiostation to RadioBob.
+2021-02-16 13:41:27,171,171 [RadioThread] Radiostation[HR3][8732] INFO stop http://metafiles.gl-systemhaus.de/hr/hr3_2.m3u
+2021-02-16 13:41:27,204,204 [RadioThread] RadioProcess[8732] DEBUG Stop current radiostation HR3 .
+2021-02-16 13:41:27,204,204 [RadioThread] RadioSwitch[8732] INFO get_radiostation(RadioBob)
+2021-02-16 13:41:27,204,204 [RadioThread] Radiostation[RadioBob][8732] INFO play http://streams.radiobob.de/100/mp3-192/streams.radiobob.de/play.m3u
+2021-02-16 13:41:32,210,210 [RadioThread] RadioProcess[8732] DEBUG Selected Radiostation: RadioBob.
+2021-02-16 13:41:32,211,211 [RadioThread] RadioProcess[8732] DEBUG Current Radiostation: RadioBob.
+2021-02-16 13:41:37,149,149 [DryModeThread] DryModeProcess[8732] INFO Starte hr3
+2021-02-16 13:41:37,216,216 [RadioThread] RadioProcess[8732] DEBUG Selected Radiostation: HR3.
+2021-02-16 13:41:37,217,217 [RadioThread] RadioProcess[8732] DEBUG Current Radiostation: RadioBob.
+2021-02-16 13:41:37,217,217 [RadioThread] RadioProcess[8732] INFO Change Radiostation to HR3.
+2021-02-16 13:41:37,217,217 [RadioThread] Radiostation[RadioBob][8732] INFO stop http://streams.radiobob.de/100/mp3-192/streams.radiobob.de/play.m3u
+2021-02-16 13:41:37,249,249 [RadioThread] RadioProcess[8732] DEBUG Stop current radiostation RadioBob .
+2021-02-16 13:41:37,249,249 [RadioThread] RadioSwitch[8732] INFO get_radiostation(HR3)
+2021-02-16 13:41:37,249,249 [RadioThread] Radiostation[HR3][8732] INFO play http://metafiles.gl-systemhaus.de/hr/hr3_2.m3u
+2021-02-16 13:41:42,255,255 [RadioThread] RadioProcess[8732] DEBUG Selected Radiostation: HR3.
+2021-02-16 13:41:42,256,256 [RadioThread] RadioProcess[8732] DEBUG Current Radiostation: HR3.
+2021-02-16 13:41:47,262,262 [RadioThread] RadioProcess[8732] DEBUG Selected Radiostation: HR3.
+2021-02-16 13:41:47,262,262 [RadioThread] RadioProcess[8732] DEBUG Current Radiostation: HR3.
+2021-02-16 13:41:52,266,266 [RadioThread] RadioProcess[8732] DEBUG Selected Radiostation: HR3.
+2021-02-16 13:41:52,266,266 [RadioThread] RadioProcess[8732] DEBUG Current Radiostation: HR3.
+2021-02-16 13:41:57,160,160 [DryModeThread] DryModeProcess[8732] INFO Starte RadioBob
+2021-02-16 13:41:57,270,270 [RadioThread] RadioProcess[8732] DEBUG Selected Radiostation: RadioBob.
+2021-02-16 13:41:57,271,271 [RadioThread] RadioProcess[8732] DEBUG Current Radiostation: HR3.
+2021-02-16 13:41:57,271,271 [RadioThread] RadioProcess[8732] INFO Change Radiostation to RadioBob.
+2021-02-16 13:41:57,271,271 [RadioThread] Radiostation[HR3][8732] INFO stop http://metafiles.gl-systemhaus.de/hr/hr3_2.m3u
+2021-02-16 13:41:57,314,314 [RadioThread] RadioProcess[8732] DEBUG Stop current radiostation HR3 .
+2021-02-16 13:41:57,315,315 [RadioThread] RadioSwitch[8732] INFO get_radiostation(RadioBob)
+2021-02-16 13:41:57,315,315 [RadioThread] Radiostation[RadioBob][8732] INFO play http://streams.radiobob.de/100/mp3-192/streams.radiobob.de/play.m3u
+2021-02-16 13:42:02,320,320 [RadioThread] RadioProcess[8732] DEBUG Selected Radiostation: RadioBob.
+2021-02-16 13:42:02,321,321 [RadioThread] RadioProcess[8732] DEBUG Current Radiostation: RadioBob.
+2021-02-16 13:42:07,161,161 [DryModeThread] DryModeProcess[8732] INFO Starte hr3
+2021-02-16 13:42:07,322,322 [RadioThread] RadioProcess[8732] DEBUG Selected Radiostation: HR3.
+2021-02-16 13:42:07,323,323 [RadioThread] RadioProcess[8732] DEBUG Current Radiostation: RadioBob.
+2021-02-16 13:42:07,323,323 [RadioThread] RadioProcess[8732] INFO Change Radiostation to HR3.
+2021-02-16 13:42:07,323,323 [RadioThread] Radiostation[RadioBob][8732] INFO stop http://streams.radiobob.de/100/mp3-192/streams.radiobob.de/play.m3u
+2021-02-16 13:42:07,368,368 [RadioThread] RadioProcess[8732] DEBUG Stop current radiostation RadioBob .
+2021-02-16 13:42:07,368,368 [RadioThread] RadioSwitch[8732] INFO get_radiostation(HR3)
+2021-02-16 13:42:07,369,369 [RadioThread] Radiostation[HR3][8732] INFO play http://metafiles.gl-systemhaus.de/hr/hr3_2.m3u
+2021-02-16 13:42:12,371,371 [RadioThread] RadioProcess[8732] DEBUG Selected Radiostation: HR3.
+2021-02-16 13:42:12,371,371 [RadioThread] RadioProcess[8732] DEBUG Current Radiostation: HR3.
+2021-02-16 13:42:17,375,375 [RadioThread] RadioProcess[8732] DEBUG Selected Radiostation: HR3.
+2021-02-16 13:42:17,375,375 [RadioThread] RadioProcess[8732] DEBUG Current Radiostation: HR3.
+2021-02-16 13:42:22,380,380 [RadioThread] RadioProcess[8732] DEBUG Selected Radiostation: HR3.
+2021-02-16 13:42:22,380,380 [RadioThread] RadioProcess[8732] DEBUG Current Radiostation: HR3.
+2021-02-16 13:42:27,171,171 [DryModeThread] DryModeProcess[8732] INFO Starte RadioBob
+2021-02-16 13:42:27,385,385 [RadioThread] RadioProcess[8732] DEBUG Selected Radiostation: RadioBob.
+2021-02-16 13:42:27,385,385 [RadioThread] RadioProcess[8732] DEBUG Current Radiostation: HR3.
+2021-02-16 13:42:27,385,385 [RadioThread] RadioProcess[8732] INFO Change Radiostation to RadioBob.
+2021-02-16 13:42:27,386,386 [RadioThread] Radiostation[HR3][8732] INFO stop http://metafiles.gl-systemhaus.de/hr/hr3_2.m3u
+2021-02-16 13:42:27,422,422 [RadioThread] RadioProcess[8732] DEBUG Stop current radiostation HR3 .
+2021-02-16 13:42:27,422,422 [RadioThread] RadioSwitch[8732] INFO get_radiostation(RadioBob)
+2021-02-16 13:42:27,422,422 [RadioThread] Radiostation[RadioBob][8732] INFO play http://streams.radiobob.de/100/mp3-192/streams.radiobob.de/play.m3u
+2021-02-16 13:42:32,424,424 [RadioThread] RadioProcess[8732] DEBUG Selected Radiostation: RadioBob.
+2021-02-16 13:42:32,425,425 [RadioThread] RadioProcess[8732] DEBUG Current Radiostation: RadioBob.
+2021-02-16 13:42:37,172,172 [DryModeThread] DryModeProcess[8732] INFO Starte hr3
+2021-02-16 13:42:37,426,426 [RadioThread] RadioProcess[8732] DEBUG Selected Radiostation: HR3.
+2021-02-16 13:42:37,427,427 [RadioThread] RadioProcess[8732] DEBUG Current Radiostation: RadioBob.
+2021-02-16 13:42:37,427,427 [RadioThread] RadioProcess[8732] INFO Change Radiostation to HR3.
+2021-02-16 13:42:37,427,427 [RadioThread] Radiostation[RadioBob][8732] INFO stop http://streams.radiobob.de/100/mp3-192/streams.radiobob.de/play.m3u
+2021-02-16 13:42:37,464,464 [RadioThread] RadioProcess[8732] DEBUG Stop current radiostation RadioBob .
+2021-02-16 13:42:37,465,465 [RadioThread] RadioSwitch[8732] INFO get_radiostation(HR3)
+2021-02-16 13:42:37,465,465 [RadioThread] Radiostation[HR3][8732] INFO play http://metafiles.gl-systemhaus.de/hr/hr3_2.m3u
+2021-02-16 13:42:42,470,470 [RadioThread] RadioProcess[8732] DEBUG Selected Radiostation: HR3.
+2021-02-16 13:42:42,471,471 [RadioThread] RadioProcess[8732] DEBUG Current Radiostation: HR3.
+2021-02-16 13:42:47,477,477 [RadioThread] RadioProcess[8732] DEBUG Selected Radiostation: HR3.
+2021-02-16 13:42:47,477,477 [RadioThread] RadioProcess[8732] DEBUG Current Radiostation: HR3.
+2021-02-16 13:42:52,478,478 [RadioThread] RadioProcess[8732] DEBUG Selected Radiostation: HR3.
+2021-02-16 13:42:52,478,478 [RadioThread] RadioProcess[8732] DEBUG Current Radiostation: HR3.
+2021-02-16 13:42:57,177,177 [DryModeThread] DryModeProcess[8732] INFO Starte RadioBob
+2021-02-16 13:42:57,479,479 [RadioThread] RadioProcess[8732] DEBUG Selected Radiostation: RadioBob.
+2021-02-16 13:42:57,479,479 [RadioThread] RadioProcess[8732] DEBUG Current Radiostation: HR3.
+2021-02-16 13:42:57,479,479 [RadioThread] RadioProcess[8732] INFO Change Radiostation to RadioBob.
+2021-02-16 13:42:57,480,480 [RadioThread] Radiostation[HR3][8732] INFO stop http://metafiles.gl-systemhaus.de/hr/hr3_2.m3u
+2021-02-16 13:42:57,515,515 [RadioThread] RadioProcess[8732] DEBUG Stop current radiostation HR3 .
+2021-02-16 13:42:57,515,515 [RadioThread] RadioSwitch[8732] INFO get_radiostation(RadioBob)
+2021-02-16 13:42:57,515,515 [RadioThread] Radiostation[RadioBob][8732] INFO play http://streams.radiobob.de/100/mp3-192/streams.radiobob.de/play.m3u
+2021-02-16 13:43:02,517,517 [RadioThread] RadioProcess[8732] DEBUG Selected Radiostation: RadioBob.
+2021-02-16 13:43:02,518,518 [RadioThread] RadioProcess[8732] DEBUG Current Radiostation: RadioBob.
+2021-02-16 13:43:07,179,179 [DryModeThread] DryModeProcess[8732] INFO Starte hr3
+2021-02-16 13:43:07,518,518 [RadioThread] RadioProcess[8732] DEBUG Selected Radiostation: HR3.
+2021-02-16 13:43:07,519,519 [RadioThread] RadioProcess[8732] DEBUG Current Radiostation: RadioBob.
+2021-02-16 13:43:07,519,519 [RadioThread] RadioProcess[8732] INFO Change Radiostation to HR3.
+2021-02-16 13:43:07,519,519 [RadioThread] Radiostation[RadioBob][8732] INFO stop http://streams.radiobob.de/100/mp3-192/streams.radiobob.de/play.m3u
+2021-02-16 13:43:07,560,560 [RadioThread] RadioProcess[8732] DEBUG Stop current radiostation RadioBob .
+2021-02-16 13:43:07,561,561 [RadioThread] RadioSwitch[8732] INFO get_radiostation(HR3)
+2021-02-16 13:43:07,561,561 [RadioThread] Radiostation[HR3][8732] INFO play http://metafiles.gl-systemhaus.de/hr/hr3_2.m3u
+2021-02-16 13:43:12,564,564 [RadioThread] RadioProcess[8732] DEBUG Selected Radiostation: HR3.
+2021-02-16 13:43:12,565,565 [RadioThread] RadioProcess[8732] DEBUG Current Radiostation: HR3.
+2021-02-16 13:43:17,184,184 [DryModeThread] DryModeProcess[8732] INFO Stop event is set. Stop dry mode process.
+2021-02-16 13:43:17,568,568 [RadioThread] RadioProcess[8732] DEBUG Selected Radiostation: HR3.
+2021-02-16 13:43:17,568,568 [RadioThread] RadioProcess[8732] DEBUG Current Radiostation: HR3.
+2021-02-16 13:43:22,574,574 [RadioThread] RadioProcess[8732] DEBUG Selected Radiostation: HR3.
+2021-02-16 13:43:22,575,575 [RadioThread] RadioProcess[8732] DEBUG Current Radiostation: HR3.
+2021-02-16 13:43:27,579,579 [RadioThread] RadioProcess[8732] DEBUG Selected Radiostation: HR3.
+2021-02-16 13:43:27,579,579 [RadioThread] RadioProcess[8732] DEBUG Current Radiostation: HR3.
+2021-02-16 13:43:32,584,584 [RadioThread] RadioProcess[8732] DEBUG Selected Radiostation: HR3.
+2021-02-16 13:43:32,584,584 [RadioThread] RadioProcess[8732] DEBUG Current Radiostation: HR3.
+2021-02-16 13:43:37,588,588 [RadioThread] RadioProcess[8732] DEBUG Selected Radiostation: HR3.
+2021-02-16 13:43:37,588,588 [RadioThread] RadioProcess[8732] DEBUG Current Radiostation: HR3.
+2021-02-16 13:43:42,593,593 [RadioThread] RadioProcess[8732] DEBUG Selected Radiostation: HR3.
+2021-02-16 13:43:42,594,594 [RadioThread] RadioProcess[8732] DEBUG Current Radiostation: HR3.
+2021-02-16 13:43:47,595,595 [RadioThread] RadioProcess[8732] DEBUG Selected Radiostation: HR3.
+2021-02-16 13:43:47,596,596 [RadioThread] RadioProcess[8732] DEBUG Current Radiostation: HR3.
+2021-02-16 13:43:52,599,599 [RadioThread] RadioProcess[8732] DEBUG Selected Radiostation: HR3.
+2021-02-16 13:43:52,599,599 [RadioThread] RadioProcess[8732] DEBUG Current Radiostation: HR3.
+2021-02-16 13:43:57,605,605 [RadioThread] RadioProcess[8732] DEBUG Selected Radiostation: HR3.
+2021-02-16 13:43:57,605,605 [RadioThread] RadioProcess[8732] DEBUG Current Radiostation: HR3.
+2021-02-16 13:44:02,607,607 [RadioThread] RadioProcess[8732] DEBUG Selected Radiostation: HR3.
+2021-02-16 13:44:02,608,608 [RadioThread] RadioProcess[8732] DEBUG Current Radiostation: HR3.
+2021-02-16 13:44:07,609,609 [RadioThread] RadioProcess[8732] DEBUG Selected Radiostation: HR3.
+2021-02-16 13:44:07,609,609 [RadioThread] RadioProcess[8732] DEBUG Current Radiostation: HR3.
+2021-02-16 13:44:12,615,615 [RadioThread] RadioProcess[8732] DEBUG Selected Radiostation: HR3.
+2021-02-16 13:44:12,615,615 [RadioThread] RadioProcess[8732] DEBUG Current Radiostation: HR3.
+2021-02-16 13:44:17,619,619 [RadioThread] RadioProcess[8732] DEBUG Selected Radiostation: HR3.
+2021-02-16 13:44:17,619,619 [RadioThread] RadioProcess[8732] DEBUG Current Radiostation: HR3.
+2021-02-16 13:44:22,621,621 [RadioThread] RadioProcess[8732] DEBUG Selected Radiostation: HR3.
+2021-02-16 13:44:22,621,621 [RadioThread] RadioProcess[8732] DEBUG Current Radiostation: HR3.
+2021-02-16 13:44:27,622,622 [RadioThread] RadioProcess[8732] DEBUG Selected Radiostation: HR3.
+2021-02-16 13:44:27,622,622 [RadioThread] RadioProcess[8732] DEBUG Current Radiostation: HR3.
+2021-02-16 13:44:28,591,591 [MainThread] main[8732] INFO Ctrl+C pressed...
+2021-02-16 13:44:32,628,628 [RadioThread] RadioProcess[8732] DEBUG Selected Radiostation: HR3.
+2021-02-16 13:44:32,628,628 [RadioThread] RadioProcess[8732] DEBUG Current Radiostation: HR3.
+2021-02-16 13:44:32,629,629 [RadioThread] RadioProcess[8732] INFO Stop event is set. Stop radio process.
+2021-02-16 13:44:32,629,629 [RadioThread] Radiostation[HR3][8732] INFO stop http://metafiles.gl-systemhaus.de/hr/hr3_2.m3u

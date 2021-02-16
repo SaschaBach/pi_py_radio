@@ -64,8 +64,6 @@ except KeyboardInterrupt:
 # Todos:
 # 2. Herausfinden wie VLC die Lautstärke regelt
 # 3. Abstrakte Klasse für die Hintergrund Prozesse die process() mit exception handling implementiert
-# 6. Loglevel vom Start verarbeiten
-# 7. In File loggen. 
 
 
                                     

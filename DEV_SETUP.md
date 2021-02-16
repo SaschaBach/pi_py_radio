@@ -35,6 +35,7 @@ git init
 git config --global user.name "SaschaBach"
 git config --global user.email "sascha.bach@googlemail.com"
 git config --global init.defaultBranch master
+git config --global core.excludesFile *.log
 git remote add origin https://github.com/SaschaBach/pi_py_radio.git
 git fetch
 git checkout main
