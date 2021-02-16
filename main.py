@@ -6,8 +6,8 @@ import argparse
 from termcolor import colored
 
 from dryModeProcess import DryModeProcess
-from radiosenderProcess import RadiosenderProcess
-from radiosenderSwitch import RadiosenderSwitch
+from radioProcess import RadioProcess
+from radioSwitch import RadioSwitch
 from myLogger import MyLogger
 
 def print_startscreen():
@@ -19,45 +19,49 @@ def print_startscreen():
     print("| |   | | | |\ \ (_| | (_| | | (_) |")
     print("\_|   |_| \_| \_\__,_|\__,_|_|\___/ ")
     print("************************************")
-    print(colored("Press XYZ to skip","red"))
+    print(colored("Press Ctrl-C to skip","red"))
     print("************************************")
 
 print_startscreen()
 
 myLogger = MyLogger('main')
-myLogger.info('Starte Anwendung')
 
 parser = argparse.ArgumentParser(description='Start Skript für das Radio')
 parser.add_argument("--logLevel", type=str, default='INFO')
 parser.add_argument("--dryMode", type=bool, default=False)
-
 args = parser.parse_args()
-
 logLevel = args.logLevel
 dryMode = args.dryMode
 myLogger.debug('Arg[logLevel]=%s' % logLevel )
 myLogger.debug('Arg[dryMode]=%s' % dryMode )
 
-# Setze Startwerte
+# set start values
 redisServer = redis.Redis(host='localhost', port=6379, db=0)
-redisServer.set(RadiosenderSwitch.radiosender, RadiosenderSwitch.radio_aus)
+redisServer.set(RadioSwitch.selected_radiostation, RadioSwitch.radio_off)
 
 try:
-    radiosenderProcess = RadiosenderProcess()
-    radiosenderThread = threading.Thread(target=radiosenderProcess.process, name="RadiosenderProcessThread")
-    radiosenderThread.start()
+    stop_event = threading.Event()
+    
+    radioProcess = RadioProcess()
+    radio_thread = threading.Thread(target=radioProcess.process, name="RadioThread", args=(stop_event,))
+    radio_thread.start()
     
     if dryMode:
-        myLogger.info('DryMode Flag aktiv')
+        myLogger.info('DryMode Flag is activ')
         dryModeProcess = DryModeProcess()
-        dryModeThread = threading.Thread(target=dryModeProcess.process, name="DryModeProcessThread")
-        dryModeThread.start()
-    
-    time.sleep(30)
+        dryMode_thread = threading.Thread(target=dryModeProcess.process, name="DryModeThread", args=(stop_event,))
+        dryMode_thread.start()  
 
-except:
-    e = sys.exc_info()[0]
-    myLogger.error("Threads konnten nicht gestartet werden: %s" % e )    
+    stop_event.wait()  # wait forever but without blocking KeyboardInterrupt exceptions
+
+    while True:
+        time.sleep(60)
+        myLogger.debug("Still alive.")
+
+except KeyboardInterrupt:   
+    myLogger.info("Ctrl+C pressed...")
+    stop_event.set()  # inform the child thread that it should exit
+    sys.exit(1)
 
 # Todos:
 # 1. RadiosenderSwitch in einen Thread auslagern. Beim Catch all geht es auf kein sender zurück

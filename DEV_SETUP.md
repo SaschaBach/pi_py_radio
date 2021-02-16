@@ -1,4 +1,4 @@
-# Fuer den Mac
+# Mac
 # Homebrew 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 # python 
@@ -7,7 +7,7 @@ brew install python
 brew install vlc
 # GIT
 brew install git
-# Um das Entwicklungsverzeichnis auf dem Pi innerhalb der lokalen Maschine zu mounten
+# to mount the code folder of the pi at the mac
 sshfs pi@192.168.2.114:/home/pi/Desktop/pi_py_radio ~/Desktop/pi_py_radio_pi
 # Redis
 brew install redis
@@ -16,7 +16,7 @@ brew services stop redis
 redis-cli ping
 redis-cli monitor
 
-# Fuer den Pi
+# Pi
 # VLC
 apt-get install vlc
 # GIT
@@ -24,8 +24,7 @@ apt-get install git
 # Redis
 tbd
 
-# Fuer beide
-# Um VLC zu starten muss erst die python lib für VLC installiert werden
+# For both
 pip3 install python-vlc
 pip3 install coloredlogs
 pip3 install redis
