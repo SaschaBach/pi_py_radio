@@ -1,0 +1,5 @@
+# ignore all logs *.log 
+*.log
+
+# macOS Files
+.DS_Store
