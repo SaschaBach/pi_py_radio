@@ -64,7 +64,8 @@ except KeyboardInterrupt:
 # Todos:
 # 2. Herausfinden wie VLC die Lautstärke regelt
 # 3. Abstrakte Klasse für die Hintergrund Prozesse die process() mit exception handling implementiert
-
+# 4. VLC Output von Stereo auf Mono umstellen
+# 5. Airplay
 
                                     
                                     
