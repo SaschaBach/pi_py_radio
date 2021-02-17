@@ -1,5 +1,6 @@
 # ignore all logs *.log 
 *.log
+*.log.*
 
 # pycache
 __pycache__/
@@ -7,5 +8,7 @@ __pycache__/
 # macOS Files
 .DS_Store
 
-# ignore all pyc *.pyc 
+# other stuff
 *.pyc
+._.DS_Store
+._.
