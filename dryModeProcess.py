@@ -19,7 +19,7 @@ class DryModeProcess(object):
         while count < 5 and not stop_event.is_set():
             count += 1
 
-            time.sleep(10)
+            time.sleep(5)
 
             try:
                 self.myLogger.info('Starte RadioBob')

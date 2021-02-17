@@ -7,6 +7,7 @@ from termcolor import colored
 
 from dryModeProcess import DryModeProcess
 from radioProcess import RadioProcess
+from lightProcess import LightProcess
 from radioSwitch import RadioSwitch
 from myLogger import MyLogger
 
@@ -22,7 +23,7 @@ print(colored("Press Ctrl-C to skip","red"))
 print("************************************")
 
 # process cmd line args
-parser = argparse.ArgumentParser(description='Start Skript für das Radio')
+parser = argparse.ArgumentParser(description='Start script for the radio application')
 parser.add_argument("--logLevel", type=str, default='INFO')
 parser.add_argument("--dryMode", type=bool, default=False)
 args = parser.parse_args()
@@ -53,6 +54,10 @@ if dryMode:
     dryMode_thread = threading.Thread(target=dryModeProcess.process, name="DryModeThread", args=(stop_event,))
     dryMode_thread.start()  
 
+lightProcess = LightProcess()
+light_thread = threading.Thread(target=lightProcess.process, name="LightThread", args=(stop_event,))
+light_thread.start()
+
 try:
     stop_event.wait()  # wait forever but without blocking KeyboardInterrupt exceptions
 
@@ -62,10 +67,11 @@ except KeyboardInterrupt:
     sys.exit(1)
 
 # Todos:
-# 2. Herausfinden wie VLC die Lautstärke regelt
-# 3. Abstrakte Klasse für die Hintergrund Prozesse die process() mit exception handling implementiert
-# 4. VLC Output von Stereo auf Mono umstellen
+# 2. Lautstaerke regeln
+# 3. Abstrakte Klasse fuer Prozesse
+# 4. vlc output auf mono
 # 5. Airplay
+
 
                                     
                                     

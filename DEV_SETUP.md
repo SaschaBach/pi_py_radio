@@ -22,7 +22,10 @@ apt-get install vlc
 # GIT
 apt-get install git
 # Redis
-tbd
+apt-get install redis
+systemctl status redis
+redis-cli ping
+redis-cli monitor
 
 # For both
 pip3 install python-vlc

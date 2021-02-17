@@ -6,3 +6,6 @@ __pycache__/
 
 # macOS Files
 .DS_Store
+
+# ignore all pyc *.pyc 
+*.pyc
