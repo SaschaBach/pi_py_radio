@@ -5,6 +5,7 @@ import time
 import argparse
 from termcolor import colored
 
+from switchWatcherProcess import SwitchWatcherProcess
 from dryModeProcess import DryModeProcess
 from radioProcess import RadioProcess
 from lightProcess import LightProcess
@@ -53,6 +54,10 @@ if dryMode:
     dryModeProcess = DryModeProcess()
     dryMode_thread = threading.Thread(target=dryModeProcess.process, name="DryModeThread", args=(stop_event,))
     dryMode_thread.start()  
+else:
+    switchWatcherProcess = SwitchWatcherProcess()
+    switchWatcher_thread = threading.Thread(target=switchWatcherProcess.process, name="SwitchWatcherThread", args=(stop_event,))
+    switchWatcher_thread.start()
 
 lightProcess = LightProcess()
 light_thread = threading.Thread(target=lightProcess.process, name="LightThread", args=(stop_event,))

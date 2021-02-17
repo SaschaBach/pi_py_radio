@@ -20,7 +20,7 @@ class RadioProcess(object):
         current_radiostation_name = RadioSwitch.radio_off
 
         while not stop_event.is_set():
-            time.sleep(5)
+            time.sleep(1)
 
             try:
                 selected_radiostation_name = self.redisServer.get(RadioSwitch.selected_radiostation)
@@ -29,17 +29,18 @@ class RadioProcess(object):
                 self.myLogger.debug('Selected Radiostation: %s.' % radiostation_name_decoded)
                 self.myLogger.debug('Current Radiostation: %s.' % current_radiostation_name)
 
-                if current_radiostation_name == radiostation_name_decoded or radiostation_name_decoded == RadioSwitch.radio_off:
+                if current_radiostation_name == radiostation_name_decoded:
                     continue
 
                 self.myLogger.info("Change Radiostation to %s." % radiostation_name_decoded)
                 
                 self.current_radiostation.stop()
                 self.myLogger.debug("Stop current radiostation %s ." % self.current_radiostation.name)
-                
-                self.current_radiostation = self.radioSwitch.get_radiostation(radiostation_name_decoded)
 
-                self.current_radiostation.play()
+                if radiostation_name_decoded != RadioSwitch.radio_off:                
+                    self.current_radiostation = self.radioSwitch.get_radiostation(radiostation_name_decoded)
+                    self.current_radiostation.play()
+
                 current_radiostation_name = radiostation_name_decoded
 
             except: # catch *all* exceptions
