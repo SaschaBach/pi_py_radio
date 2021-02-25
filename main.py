@@ -5,6 +5,7 @@ import time
 import argparse
 from termcolor import colored
 
+from volumeWatcherProcess import VolumeWatcherProcess
 from switchWatcherProcess import SwitchWatcherProcess
 from dryModeProcess import DryModeProcess
 from radioProcess import RadioProcess
@@ -62,6 +63,10 @@ else:
 lightProcess = LightProcess()
 light_thread = threading.Thread(target=lightProcess.process, name="LightThread", args=(stop_event,))
 light_thread.start()
+
+volumeWatcherProcess = VolumeWatcherProcess()
+volumeWatcher_thread = threading.Thread(target=volumeWatcherProcess.process, name="VolumeWatcherThread", args=(stop_event,))
+volumeWatcher_thread.start()
 
 try:
     stop_event.wait()  # wait forever but without blocking KeyboardInterrupt exceptions

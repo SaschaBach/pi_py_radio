@@ -18,31 +18,38 @@ class RadioProcess(object):
 
     def process(self, stop_event):
         current_radiostation_name = RadioSwitch.radio_off
+        current_volume = 0
 
         while not stop_event.is_set():
             time.sleep(1)
 
             try:
-                selected_radiostation_name = self.redisServer.get(RadioSwitch.selected_radiostation)
-                radiostation_name_decoded = selected_radiostation_name.decode('utf-8')
-                
-                self.myLogger.debug('Selected Radiostation: %s.' % radiostation_name_decoded)
+                selected_radiostation_name = self.redisServer.get(RadioSwitch.selected_radiostation).decode('utf-8')
+
+                self.myLogger.debug('Selected Radiostation: %s.' % selected_radiostation_name)
                 self.myLogger.debug('Current Radiostation: %s.' % current_radiostation_name)
 
-                if current_radiostation_name == radiostation_name_decoded:
+                selected_volume = int(self.redisServer.get(RadioSwitch.selected_volume).decode('utf-8'))
+                
+                if current_volume != selected_volume:
+                    self.myLogger.info('Change Volume: %s.' % selected_volume)
+                    self.current_radiostation.set_volume(selected_volume)
+                    current_volume = selected_volume
+
+                if current_radiostation_name == selected_radiostation_name:
                     continue
 
-                self.myLogger.info("Change Radiostation to %s." % radiostation_name_decoded)
+                self.myLogger.info("Change Radiostation to %s." % selected_radiostation_name)
                 
                 self.current_radiostation.stop()
                 self.myLogger.debug("Stop current radiostation %s ." % self.current_radiostation.name)
 
-                if radiostation_name_decoded != RadioSwitch.radio_off:                
-                    self.current_radiostation = self.radioSwitch.get_radiostation(radiostation_name_decoded)
+                if selected_radiostation_name != RadioSwitch.radio_off:                
+                    self.current_radiostation = self.radioSwitch.get_radiostation(selected_radiostation_name)
                     self.current_radiostation.play()
 
-                current_radiostation_name = radiostation_name_decoded
-
+                current_radiostation_name = selected_radiostation_name
+                
             except: # catch *all* exceptions
                 self.redisServer.set(RadioSwitch.selected_radiostation, RadioSwitch.radio_off)    
                 self.myLogger.debug("Set selected radiostation on default %s." % RadioSwitch.radio_off)

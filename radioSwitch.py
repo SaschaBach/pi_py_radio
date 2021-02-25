@@ -7,6 +7,7 @@ class RadioSwitch(object):
     selected_radiostation = 'selected_radiostation'
     hr3 = 'HR3'
     radioBob = 'RadioBob'
+    selected_volume = 'selected_volume'
 
     def __init__(self):
         self.myLogger = MyLogger(self.__class__.__name__)

@@ -9,6 +9,7 @@ brew install vlc
 brew install git
 # to mount the code folder of the pi at the mac
 sshfs pi@192.168.2.114:/home/pi/Desktop/pi_py_radio ~/Desktop/pi_py_radio_pi
+umount -f ~/Desktop/pi_py_radio_pi
 # Redis
 brew install redis
 brew services start redis
@@ -31,7 +32,6 @@ wget https://github.com/doceme/py-spidev/archive/master.zip
 unzip master.zip
 cd py-spidev-master
 sudo python setup.py install
-
 
 # For both
 pip3 install python-vlc

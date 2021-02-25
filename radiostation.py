@@ -25,12 +25,17 @@ class Radiostation(object):
         self.list_player.set_media_list(self.media_list)
 
     def play(self):
-        self.myLogger.info("play %s" % self.url)    
-        self.list_player.play()
+        self.myLogger.debug("play %s" % self.url)    
+        self.list_player.play() 
         # self.player.play()
 
                 
     def stop(self):
-        self.myLogger.info("stop %s" % self.url)    
+        self.myLogger.debug("stop %s" % self.url)    
         self.list_player.stop()
         # self.player.stop()
+
+    def set_volume(self, volume):
+        self.myLogger.debug("audio_set_volume %s" % volume)    
+        self.list_player.get_media_player().audio_set_volume(volume)
+
