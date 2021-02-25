@@ -72,6 +72,7 @@ except KeyboardInterrupt:
     sys.exit(1)
 
 # Todos:
+# 1. VLC auf PI auf Mono im Default umstellen
 # 2. Lautstaerke regeln
 # 3. Abstrakte Klasse fuer Prozesse
 # 4. vlc output auf mono

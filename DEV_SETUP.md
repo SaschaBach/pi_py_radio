@@ -26,6 +26,12 @@ apt-get install redis
 systemctl status redis
 redis-cli ping
 redis-cli monitor
+# SpiDev Bib to process analog signals.  
+wget https://github.com/doceme/py-spidev/archive/master.zip 
+unzip master.zip
+cd py-spidev-master
+sudo python setup.py install
+
 
 # For both
 pip3 install python-vlc
