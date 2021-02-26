@@ -17,7 +17,7 @@ class RadioSwitch(object):
         self.hr3:Radiostation('http://metafiles.gl-systemhaus.de/hr/hr3_2.m3u',self.hr3)}
 
     def get_radiostation(self, name):
-        self.myLogger.info("get_radiostation(%s)" % name)    
+        self.myLogger.debug("get_radiostation(%s)" % name)    
 
         try:
             radiostation = self.radiostationDict[name]

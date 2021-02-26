@@ -43,5 +43,5 @@ class SwitchWatcherProcess(object):
                 e = sys.exc_info()[0]
                 self.myLogger.error("Error: %s" % e )   
 
-        self.myLogger.info("Stop event is set. Stop switch watcher process.")
+        self.myLogger.info("Stop event is set. Stop %s" % self.__class__.__name__)
       

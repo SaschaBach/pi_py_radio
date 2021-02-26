@@ -43,6 +43,6 @@ class LightProcess(object):
                 e = sys.exc_info()[0]
                 self.myLogger.error("Error: %s" % e )   
 
-        self.myLogger.info("Stop event is set. Stop light process.")
+        self.myLogger.info("Stop event is set. Stop %s" % self.__class__.__name__)
         self.gpioController.call(GPIOController.gpio_led_3_3_v, GPIOController.gpio_off)
       

@@ -52,9 +52,13 @@ class VolumeWatcherProcess(object):
                     self.redisServer.set(RadioSwitch.selected_volume, 40)
                     continue
 
-                if value > 10:
+                if value > 50:
                     self.redisServer.set(RadioSwitch.selected_volume, 30)
                     continue
+
+                if value > 10:
+                    self.redisServer.set(RadioSwitch.selected_volume, 20)
+                    continue        
 
                 if value < 10:
                     self.redisServer.set(RadioSwitch.selected_volume, 0)
@@ -64,5 +68,5 @@ class VolumeWatcherProcess(object):
                 e = sys.exc_info()[0]
                 self.myLogger.error("Error: %s" % e )   
 
-        self.myLogger.info("Stop event is set. Stop switch watcher process.")
+        self.myLogger.info("Stop event is set. Stop %s" % self.__class__.__name__)
        

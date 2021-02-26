@@ -57,5 +57,5 @@ class RadioProcess(object):
                 e = sys.exc_info()[0]
                 self.myLogger.error("Error: %s" % e ) 
 
-        self.myLogger.info("Stop event is set. Stop radio process.")    
+        self.myLogger.info("Stop event is set. Stop %s" % self.__class__.__name__)
         self.current_radiostation.stop()
