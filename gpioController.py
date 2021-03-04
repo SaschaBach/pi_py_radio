@@ -11,6 +11,8 @@ class GPIOController(object):
     gpio_led_3_3_v = 23
     gpio_radio_bob_switch = 24
     gpio_hr3_switch = 22
+    gpio_free_station_switch = 18
+
 
     def __init__(self):
         self.myLogger = MyLogger(self.__class__.__name__)
@@ -19,9 +21,10 @@ class GPIOController(object):
         # call GPIOS by Numbers
         try:
             GPIO.setmode(GPIO.BCM)
-            GPIO.setup(23, GPIO.OUT)
-            GPIO.setup(24, GPIO.IN)
-            GPIO.setup(22, GPIO.IN)
+            GPIO.setup(self.gpio_led_3_3_v, GPIO.OUT)
+            GPIO.setup(self.gpio_radio_bob_switch, GPIO.IN)
+            GPIO.setup(self.gpio_free_station_switch, GPIO.IN)
+            GPIO.setup(self.gpio_hr3_switch, GPIO.IN)
         except: # catch *all* exceptions
                 e = sys.exc_info()[0]
                 self.myLogger.error("Error: %s" % e )   
