@@ -33,7 +33,7 @@ unzip master.zip
 cd py-spidev-master
 sudo python setup.py install
 
-# For both
+# For both (As root if you want to start the script later via cron)
 pip3 install python-vlc
 pip3 install coloredlogs
 pip3 install redis
