@@ -8,11 +8,10 @@ class GPIOController(object):
 
     gpio_off = GPIO.LOW
     gpio_on = GPIO.HIGH
-    gpio_led_3_3_v = 23
-    gpio_radio_bob_switch = 24
-    gpio_hr3_switch = 22
-    gpio_free_station_switch = 18
-
+    gpio_led_3_3_v = 22
+    gpio_radio_bob_switch = 18 
+    gpio_hr3_switch = 23
+    gpio_free_station_switch = 24
 
     def __init__(self):
         self.myLogger = MyLogger(self.__class__.__name__)
