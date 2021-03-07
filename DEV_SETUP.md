@@ -32,6 +32,8 @@ wget https://github.com/doceme/py-spidev/archive/master.zip
 unzip master.zip
 cd py-spidev-master
 sudo python setup.py install
+# add cronjob via sudo crontab -e
+@reboot python3 /home/pi/Desktop/pi_py_radio/main.py
 
 # For both (As root if you want to start the script later via cron)
 pip3 install python-vlc

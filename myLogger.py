@@ -12,7 +12,7 @@ class MyLogger(object):
     def __init__(self, className):
         self.myLogger = logging.getLogger(className)
         
-        handler = RotatingFileHandler('pi_py_radio.log', maxBytes=200000, backupCount=3)
+        handler = RotatingFileHandler('/home/pi/Desktop/pi_py_radio/pi_py_radio.log', maxBytes=200000, backupCount=3)
         formatter = logging.Formatter(MyLogger.my_format)
         handler.setFormatter(formatter)
         self.myLogger.addHandler(handler)
