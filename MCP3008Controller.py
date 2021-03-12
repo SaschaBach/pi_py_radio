@@ -14,7 +14,7 @@ class MCP3008Controller(object):
         self.spi.open(self.bus, self.device)
         self.spi.max_speed_hz = 1000000 # 1MHz
     
-    def read(self, channel = 0):
+    def read(self, channel = 7):
         cmd1 = 4 | 2 | (( channel & 4) >> 2)
         cmd2 = (channel & 3) << 6
  
