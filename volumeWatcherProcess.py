@@ -21,7 +21,7 @@ class VolumeWatcherProcess(object):
             time.sleep(1)
 
             try:
-                value = self.mcp3008Controller.read(channel=0)
+                value = self.mcp3008Controller.read(channel=7)
                 self.myLogger.debug("voltage current: %.2f" % (value))
 
                 if value > 1500:
