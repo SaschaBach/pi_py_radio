@@ -26,6 +26,9 @@ class SwitchWatcherProcess(object):
                 gpio_radio_hr3 = self.gpioController.request(GPIOController.gpio_hr3_switch)
                 self.myLogger.debug("State of HR3 switch: %s" % gpio_radio_hr3)
 
+                gpio_free_station = self.gpioController.request(GPIOController.gpio_free_station_switch)
+                self.myLogger.debug("State of free station switch: %s" % gpio_free_station)
+
                 if gpio_radio_bob == 1:
                     self.myLogger.debug("Switch to RadioBob")
                     self.redisServer.set(RadioSwitch.selected_radiostation, RadioSwitch.radioBob)
