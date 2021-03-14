@@ -22,43 +22,47 @@ class VolumeWatcherProcess(object):
 
             try:
                 value = self.mcp3008Controller.read(channel=7)
-                self.myLogger.debug("voltage current: %.2f" % (value))
+                self.myLogger.info("voltage current: %.2f" % (value))
 
-                if value > 1500:
+                if value > 4000:
                     self.redisServer.set(RadioSwitch.selected_volume, 100)
                     continue
                 
-                if value > 900:
+                if value > 3000:
                     self.redisServer.set(RadioSwitch.selected_volume, 90)
                     continue
                    
-                if value > 500:
+                if value > 2000:
                     self.redisServer.set(RadioSwitch.selected_volume, 80)
                     continue
 
-                if value > 400:
+                if value > 1500:
                     self.redisServer.set(RadioSwitch.selected_volume, 70)
                     continue
 
-                if value > 300:
+                if value > 800:
                     self.redisServer.set(RadioSwitch.selected_volume, 60)
                     continue
 
-                if value > 200:
+                if value > 500:
                     self.redisServer.set(RadioSwitch.selected_volume, 50)
                     continue
 
-                if value > 100:
+                if value > 300:
                     self.redisServer.set(RadioSwitch.selected_volume, 40)
                     continue
 
-                if value > 50:
+                if value > 100:
                     self.redisServer.set(RadioSwitch.selected_volume, 30)
                     continue
 
-                if value > 10:
+                if value > 50:
                     self.redisServer.set(RadioSwitch.selected_volume, 20)
-                    continue        
+                    continue     
+
+                if value > 10:
+                    self.redisServer.set(RadioSwitch.selected_volume, 10)
+                    continue      
 
                 if value < 10:
                     self.redisServer.set(RadioSwitch.selected_volume, 0)
