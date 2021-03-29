@@ -1,3 +1,16 @@
+# AirPlay Support
+sudo apt-get install libssl-dev libavahi-client-dev libasound2-dev avahi-daemon
+git clone https://github.com/abrasive/shairport.git
+cd shairport
+./configure
+make
+sudo make install
+sudo cp scripts/debian/init.d/shairport /etc/init.d/
+sudo cp scripts/debian/default/shairport /etc/default/
+# add crontab via sudo crontab -e
+shairport defaults
+@reboot /home/pi/Desktop/shairport/shairport -a Kueche
+
 # Mac
 # Homebrew 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"

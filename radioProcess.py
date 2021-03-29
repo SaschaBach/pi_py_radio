@@ -39,12 +39,16 @@ class RadioProcess(object):
                 if current_radiostation_name == selected_radiostation_name:
                     continue
 
-                self.myLogger.info("Change Radiostation to %s." % selected_radiostation_name)
+                if selected_radiostation_name == RadioSwitch.radio_off or selected_radiostation_name == RadioSwitch.airplay:       
+                    self.myLogger.info("Stop Radio. Selected station %s." % selected_radiostation_name)
+                    self.current_radiostation.stop()
+                    self.myLogger.debug("Stop current radiostation %s ." % self.current_radiostation.name)
+                else:
+                    self.myLogger.info("Change Radiostation to %s." % selected_radiostation_name)
                 
-                self.current_radiostation.stop()
-                self.myLogger.debug("Stop current radiostation %s ." % self.current_radiostation.name)
+                    self.current_radiostation.stop()
+                    self.myLogger.debug("Stop current radiostation %s ." % self.current_radiostation.name)
 
-                if selected_radiostation_name != RadioSwitch.radio_off:                
                     self.current_radiostation = self.radioSwitch.get_radiostation(selected_radiostation_name)
                     self.current_radiostation.play()
 

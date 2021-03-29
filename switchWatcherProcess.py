@@ -34,9 +34,9 @@ class SwitchWatcherProcess(object):
                     self.redisServer.set(RadioSwitch.selected_radiostation, RadioSwitch.radioBob)
                     continue
 
-                if gpio_radio_hr3 == 1:
-                    self.myLogger.debug("Switch to HR3")
-                    self.redisServer.set(RadioSwitch.selected_radiostation, RadioSwitch.hr3)
+                if gpio_free_station == 1:
+                    self.myLogger.debug("Switch to AirPlay Mode")
+                    self.redisServer.set(RadioSwitch.selected_radiostation, RadioSwitch.airplay)
                     continue
 
                 self.myLogger.debug("No switch is pressed.")        
