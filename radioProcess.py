@@ -32,7 +32,7 @@ class RadioProcess(object):
                 selected_volume = int(self.redisServer.get(RadioSwitch.selected_volume).decode('utf-8'))
                 
                 if current_volume != selected_volume:
-                    self.myLogger.debug('Change Volume: %s.' % selected_volume)
+                    self.myLogger.info('Change Volume: %s.' % selected_volume)
                     self.current_radiostation.set_volume(selected_volume)
                     current_volume = selected_volume
 

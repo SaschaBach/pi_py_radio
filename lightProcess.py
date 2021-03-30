@@ -17,6 +17,7 @@ class LightProcess(object):
     def process(self, stop_event):
         # init with start value
         current_radiostation_name = RadioSwitch.radio_off
+        current_light_state = False
         self.gpioController.call(GPIOController.gpio_led_3_3_v, GPIOController.gpio_off)
 
         while not stop_event.is_set():
@@ -27,16 +28,21 @@ class LightProcess(object):
                 selected_radiostation_name = self.redisServer.get(RadioSwitch.selected_radiostation)
                 radiostation_name_decoded = selected_radiostation_name.decode('utf-8')
 
-                if current_radiostation_name == radiostation_name_decoded:
-                    continue
-                
-                if radiostation_name_decoded == RadioSwitch.radio_off:
-                    self.myLogger.debug("Switch off light")
-                    self.gpioController.call(GPIOController.gpio_led_3_3_v, GPIOController.gpio_off)
-                else:
-                    self.myLogger.debug("Switch on light")
-                    self.gpioController.call(GPIOController.gpio_led_3_3_v, GPIOController.gpio_on)
+                turn_light_on = False
+                if radiostation_name_decoded != RadioSwitch.radio_off:
+                    turn_light_on = True
 
+                if current_light_state == turn_light_on:
+                    continue
+
+                if turn_light_on:
+                    self.myLogger.info("Switch on light and turn amp on")
+                    self.gpioController.call(GPIOController.gpio_led_3_3_v, GPIOController.gpio_on)
+                else:
+                    self.myLogger.info("Switch off light and turn amp off")
+                    self.gpioController.call(GPIOController.gpio_led_3_3_v, GPIOController.gpio_off)
+
+                current_light_state = turn_light_on
                 current_radiostation_name = radiostation_name_decoded
 
             except: # catch *all* exceptions

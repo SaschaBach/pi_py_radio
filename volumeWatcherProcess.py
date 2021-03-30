@@ -22,7 +22,7 @@ class VolumeWatcherProcess(object):
 
             try:
                 value = self.mcp3008Controller.read(channel=7)
-                self.myLogger.info("voltage current: %.2f" % (value))
+                self.myLogger.debug("voltage current: %.2f" % (value))
 
                 if value > 4000:
                     self.redisServer.set(RadioSwitch.selected_volume, 100)

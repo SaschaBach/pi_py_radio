@@ -30,17 +30,18 @@ class SwitchWatcherProcess(object):
                 self.myLogger.debug("State of free station switch: %s" % gpio_free_station)
 
                 if gpio_radio_bob == 1:
-                    self.myLogger.info("Switch to %s" % RadioSwitch.radioBob)
+                    self.myLogger.debug("Switch to %s" % RadioSwitch.radioBob)
                     self.redisServer.set(RadioSwitch.selected_radiostation, RadioSwitch.radioBob)
                     continue
 
                 if gpio_radio_hr3 == 1:
-                    self.myLogger.info("Switch to %s" % RadioSwitch.hr3)
+                    self.myLogger.debug("Switch to %s" % RadioSwitch.hr3)
                     self.redisServer.set(RadioSwitch.selected_radiostation, RadioSwitch.hr3)
                     continue
 
                 if gpio_free_station == 1:
-                    self.myLogger.info("Switch to %s" % RadioSwitch.airplay)
+                    self.myLogger.debug("Switch to %s" % RadioSwitch.airplay)
+                    self.redisServer.set(RadioSwitch.selected_radiostation, RadioSwitch.airplay)
                     continue
 
                 self.myLogger.debug("No switch is pressed.")        
