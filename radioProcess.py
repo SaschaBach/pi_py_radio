@@ -32,27 +32,28 @@ class RadioProcess(object):
                 selected_volume = int(self.redisServer.get(RadioSwitch.selected_volume).decode('utf-8'))
                 
                 if current_volume != selected_volume:
-                    self.myLogger.info('Change Volume: %s.' % selected_volume)
+                    self.myLogger.debug('Change Volume: %s.' % selected_volume)
                     self.current_radiostation.set_volume(selected_volume)
                     current_volume = selected_volume
 
-                if current_radiostation_name == selected_radiostation_name:
-                    continue
+                if current_radiostation_name != selected_radiostation_name:
+                    
+                    if selected_radiostation_name == RadioSwitch.radio_off or selected_radiostation_name == RadioSwitch.airplay:       
+                        self.myLogger.info("Stop Radio. Selected station %s." % selected_radiostation_name)
+                        self.current_radiostation.stop()
+                        self.myLogger.debug("Stop current radiostation %s ." % self.current_radiostation.name)
+                    else:
+                        self.myLogger.info("Change Radiostation to %s." % selected_radiostation_name)
 
-                if selected_radiostation_name == RadioSwitch.radio_off or selected_radiostation_name == RadioSwitch.airplay:       
-                    self.myLogger.info("Stop Radio. Selected station %s." % selected_radiostation_name)
-                    self.current_radiostation.stop()
-                    self.myLogger.debug("Stop current radiostation %s ." % self.current_radiostation.name)
-                else:
-                    self.myLogger.info("Change Radiostation to %s." % selected_radiostation_name)
-                
-                    self.current_radiostation.stop()
-                    self.myLogger.debug("Stop current radiostation %s ." % self.current_radiostation.name)
+                        self.myLogger.debug("Stop current radiostation %s ." % self.current_radiostation.name)
+                        self.current_radiostation.stop()
 
-                    self.current_radiostation = self.radioSwitch.get_radiostation(selected_radiostation_name)
-                    self.current_radiostation.play()
+                        self.current_radiostation = self.radioSwitch.get_radiostation(selected_radiostation_name)
+                    
+                        self.myLogger.debug("Play selected radiostation %s ." % self.current_radiostation.name)
+                        self.current_radiostation.play()
 
-                current_radiostation_name = selected_radiostation_name
+                    current_radiostation_name = selected_radiostation_name
                 
             except: # catch *all* exceptions
                 self.redisServer.set(RadioSwitch.selected_radiostation, RadioSwitch.radio_off)    
