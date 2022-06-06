@@ -53,15 +53,15 @@ class VolumeWatcherProcess(object):
                     continue
 
                 if value > 100:
-                    self.redisServer.set(RadioSwitch.selected_volume, 30)
+                    self.redisServer.set(RadioSwitch.selected_volume, 20)
                     continue
 
                 if value > 50:
-                    self.redisServer.set(RadioSwitch.selected_volume, 20)
+                    self.redisServer.set(RadioSwitch.selected_volume, 10)
                     continue     
 
                 if value > 10:
-                    self.redisServer.set(RadioSwitch.selected_volume, 10)
+                    self.redisServer.set(RadioSwitch.selected_volume, 5)
                     continue      
 
                 if value < 10:
