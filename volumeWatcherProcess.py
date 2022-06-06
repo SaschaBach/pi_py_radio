@@ -25,31 +25,31 @@ class VolumeWatcherProcess(object):
                 self.myLogger.debug("voltage current: %.2f" % (value))
 
                 if value > 4000:
-                    self.redisServer.set(RadioSwitch.selected_volume, 100)
+                    self.redisServer.set(RadioSwitch.selected_volume, 55)
                     continue
                 
                 if value > 3000:
-                    self.redisServer.set(RadioSwitch.selected_volume, 90)
+                    self.redisServer.set(RadioSwitch.selected_volume, 50)
                     continue
                    
                 if value > 2000:
-                    self.redisServer.set(RadioSwitch.selected_volume, 80)
+                    self.redisServer.set(RadioSwitch.selected_volume, 45)
                     continue
 
                 if value > 1500:
-                    self.redisServer.set(RadioSwitch.selected_volume, 70)
+                    self.redisServer.set(RadioSwitch.selected_volume, 40)
                     continue
 
                 if value > 800:
-                    self.redisServer.set(RadioSwitch.selected_volume, 60)
+                    self.redisServer.set(RadioSwitch.selected_volume, 35)
                     continue
 
                 if value > 500:
-                    self.redisServer.set(RadioSwitch.selected_volume, 50)
+                    self.redisServer.set(RadioSwitch.selected_volume, 30)
                     continue
 
                 if value > 300:
-                    self.redisServer.set(RadioSwitch.selected_volume, 40)
+                    self.redisServer.set(RadioSwitch.selected_volume, 25)
                     continue
 
                 if value > 100:
